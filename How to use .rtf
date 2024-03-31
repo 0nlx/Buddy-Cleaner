@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 **Report on Buddy Antivirus Tool**\
+\
+**Overview:**\
+The Buddy Antivirus Tool is a Python-based command-line utility designed to scan directories for viruses, quarantine infected files, extract files, and monitor directories for virus activity. It utilizes the ClamAV antivirus engine for scanning purposes.\
+\
+**Key Features:**\
+1. **Scanning for Viruses:** Users can initiate a scan of a specified directory to check for any infected files.\
+2. **Quarantine Functionality:** Infected files detected during scans can be moved to a quarantine directory to prevent further harm.\
+3. **File Extraction:** There is provision to extract and open specific files for further analysis.\
+4. **Monitoring:** Users can monitor a directory continuously for a specified duration to detect any virus activity.\
+5. **Development Mode:** Offers insights into upcoming features and customization options.\
+\
+**Code Review:**\
+- **Imported Libraries:** The code imports necessary libraries such as os, sys, time, shutil, clamd, logging, and colorama for various functionalities including file operations, antivirus scanning, logging, and output formatting.\
+- **Logging:** Logging is implemented to track errors and actions performed by the tool, providing a record for troubleshooting.\
+- **ClamAV Integration:** The `initialize_clamav()` function initializes the ClamAV antivirus engine using a Unix socket.\
+- **Scan Functionality:** The `scan_directory()` function iterates through files in a directory and scans them for viruses using the ClamAV client.\
+- **Quarantine:** Infected files identified during scans are moved to a designated quarantine directory using the `quarantine_infected_files()` function.\
+- **Monitoring:** The `monitor_directory()` function continuously scans a directory for viruses for a specified duration.\
+- **Command Line Interface (CLI):** The `main()` function parses command-line arguments and executes corresponding functionalities.\
+- **Development Mode:** Provides information about upcoming features and customization options.\
+\
+**Usage:**\
+The Buddy Antivirus Tool supports several commands:\
+- `buddy scan <directory>`: Scans a directory for viruses.\
+- `buddy quarantine <directory> <quarantine_directory>`: Quarantines infected files from a directory.\
+- `buddy extract <file>`: Extracts and opens a specific file.\
+- `buddy monitor <directory> <duration_in_seconds> <quarantine_directory>`: Monitors a directory for viruses for a specified duration.\
+- `buddy dev`: Enters development mode for customization and upcoming features.\
+- `buddy help`: Displays usage information.\
+\
+**Developer Information:**\
+- The tool was created by 0nlx.\
+- This version is labeled as "beta," indicating potential instability and room for improvement.\
+\
+**Conclusion:**\
+The Buddy Antivirus Tool offers essential functionalities for scanning, quarantining, and monitoring directories for viruses. With further development and refinement, it has the potential to become a valuable asset in safeguarding systems against malware threats. Users are advised to refer to the help message for proper usage instructions.}
